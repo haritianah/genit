@@ -1,0 +1,5 @@
+inscrit :
+ -bulletin
+ -Maj
+ -insertion notes
+ -param case a cocher insertion etudiants

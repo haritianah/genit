@@ -1,0 +1,76 @@
+@page { counter-increment: page; size: auto;  margin: 12mm 12mm 12mm 25mm; color:#000 !important; } 
+@page { @bottom-right { content: counter(page) " of " counter(pages); } }
+
+body{
+	background:#ccc;
+	font-size:10pt;
+    width:100%;
+    
+    margin:0px;
+}
+#content{
+	width:100%;
+	margin:0px;
+	
+}
+.trace{
+    font-size:9pt;
+}
+
+#sS1, #sS2{
+    display:none;
+}
+#mask{
+	display:none;
+}
+#cssmenu{
+	display:none;
+}
+h1{
+	background:gray;
+	margin:auto;
+	text-align:center;
+}
+.legend{
+	//border:1px solid black;
+	margin-bottom:5px;
+	margin-top:-10px;
+	height:20px;
+	line-height:1.5pt;
+	font-size:10pt;
+	padding:7px;
+}
+.legend p{
+	float:left;
+}
+.legend span{
+	color:orange;
+	font-size:10.5pt;
+}
+#univ{
+    display:block;
+	//position:fixed;
+	width:99%;
+	border: 2px solid black;
+    max-height:8.5%;
+	//margin-top:-85px;
+	background:white;
+	padding-left:2px;
+	font-size:11pt;
+}
+.domaine{
+	font-size: 11pt;
+    margin-top:-15px;
+	max-width:45%;
+    margin-left:-30px;
+	line-height:30px;
+	text-align:center;
+}
+.mention{
+	margin-left:56%;
+	margin-top:-68px;
+	font-size: 11pt;
+}
+.divtitre{
+	
+}

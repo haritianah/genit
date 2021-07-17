@@ -1,0 +1,183 @@
+body{
+	background:#ccc;
+	font-size:12pt !important;
+}
+#content{
+	width:98%;
+	margin:auto;
+	
+}
+.print-table{
+	font-size: 12pt;
+}
+.print-table-sm{
+	font-size: 12pt;
+}
+.container-lg{
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+.doyen{
+  height: 60px;
+  //border: 1px solid black;
+  margin-top: 100px !important;
+  padding-top: 10px;
+  font-size: 13pt;
+  //display: none;
+}
+.infoetudiant{
+	//line-height:4px;
+	width: 43%;
+	//border: 3px solid black;
+	margin:auto;
+}
+.line{
+	line-height: 4px !important;
+	/*margin-top: -50px;*/
+}
+.tdmat{
+  text-align: left !important;
+}
+.nivprint{
+	position: absolute;
+	top: 30px;
+	left: 46%;
+	margin: auto;
+}
+#bulsem1 h2, #bulsem2 h2{
+	font-size:12pt;
+}
+#bulsem2{
+	page-break-before:always;
+}
+.fixed{
+	border: none !important;
+}
+.pdp{
+	position:relative;
+	width:120px;
+	height:120px;
+	border: 2px solid black; 
+	border-radius:10px;
+	margin-left:72%;
+	margin-top:-90px;
+}
+.pdp img{
+	position:relative;
+	width:110px;
+	margin-top:3px;
+	margin-right:3px;
+	height:110px;
+	border: 2px solid white; 
+}
+#cssmenu{
+	//display:none;
+}
+.memp{
+	text-align:center;
+}
+h1{
+	background:gray;
+	margin:auto;
+	margin-top:2%;
+	text-align:center;
+	font-size:12pt;
+}
+.bulletin{
+	width:98%;
+	margin:auto;
+	font-size:12pt;
+	page-break-inside:avoid;
+}
+.bulletin td{
+  text-align: center;
+}
+.cpri{
+	position:relative;
+	padding-top:40px;
+}
+#tableau_resultat1{
+	page-break-inside:avoid;
+}
+.tabres{
+	width:98%;
+	font-size:12pt;
+	margin:auto;
+	height:10%;
+	border-bottom:none;
+	page-break-inside:avoid;
+}
+.tabres td{
+  padding-left: 6px;
+}
+#titre th{
+	width:auto;
+}
+
+#univb{
+	//position:fixed;
+	width:99%;
+	border: 2px solid black;
+	//margin-top:-85px;
+	max-height:8.4%;
+	background:white;
+	padding-left:2px;
+	font-size:9pt;
+}
+.rowbox-left{
+  float: left !important;
+  width: 50%;
+
+}
+.sem{
+	width:90%;
+	text-align:center;
+	//color:orange;
+	font_size:12pt;
+}
+.semr{
+	width:90%;
+	text-align:center;
+	//color:blue;
+}
+.mention .menp{
+	text-align:center;
+	margin:auto;
+}
+.legend{
+	//border:1px solid black;
+	margin-bottom:5px;
+	margin-top:-10px;
+	height:20px;
+	line-height:1.5pt;
+	font-size:7pt;
+	padding:7px;
+}
+.legend p{
+	float:left;
+}
+.legend span{
+	color:orange;
+	font-size:8pt;
+}
+.mask{
+	display: none;
+}
+.tanana td{
+	border:none;
+}
+.jury td{
+	border:none;
+}
+#mask{
+	display:none;
+}
+.ablue{
+	color: blue !important;
+}
+.ared{
+	color: red !important;
+}
+.agreen{
+	color: #64ca08 !important;
+}

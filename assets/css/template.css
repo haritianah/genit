@@ -1,0 +1,186 @@
+body{
+	margin-top: 0;
+	margin-bottom: 0;
+	//margin:10px !important;
+	//background: red !important;
+	font-family: Times New Roman !important;
+	font-size:14px !important;
+}
+.ctr{
+	height: 100%;
+	margin-left: 11px;
+	margin-right: 11px;
+}
+header{
+	//border: 2px solid black;
+	//height: 9%;
+	height: 84px;
+	//background: red;
+	width: 100%;
+	margin-top: 0px;
+}
+
+.bodi{
+	//border: 2px solid black;
+	min-height: 82%;
+	height: 82% auto;
+	//height: 30em;
+	width: 100%;
+}
+footer{
+	//border: 2px solid black;
+	height: 6%;
+	//height: 3em;
+	width: 100%;
+}
+h1{
+	text-align: center;
+	margin-top: -7px !important
+}
+.test{
+	height: inherit;
+	width: 100%;
+}
+.heads{
+	//border: 1px solid black;
+	width: 100%;
+	height: 12%;
+}
+.heads p {
+	text-align: center;
+}
+.left-box{
+	width: 50%;
+	float: left;
+}
+.box-3{
+	width: 33% !important;
+}
+/*.univs{
+	border: 1px solid black;
+	height: auto;
+}*/
+.domaine, .mention{
+	margin-top: 10px;
+
+}
+.domaine{
+	padding-right: 50px;
+}
+.mention{
+	padding-left: 50px;
+}
+.fixed{
+	position: fixed;
+	width: 98%;
+	background: #fff;
+	border: 1px solid black;
+}
+.white{
+	background: #fff;
+}
+.gray{
+	background: #ccc;
+}
+.position-o{
+	visibility: hidden;
+	margin: 7;
+}
+.position-f{
+	//border: 1px solid black;
+	position: fixed;
+	z-index: 1 !important;
+	text-align: center;
+	margin: auto;
+	width: 98%;
+}
+.btn-menu{
+	margin-top: 8px;
+	background: none;
+	color: #9d9d9d;;
+}
+.btn-menu:hover{
+	color: white !important;
+}
+.btn-menu:focus{
+	color: white !important;
+}
+.open{
+	color:  red !important;
+}
+/*
+	MENU DEROULANTE
+*/
+.deroulante:hover ul{
+  display: block;
+  transition:5s;
+}
+.deroulante{
+  position: relative !important;
+}
+.deroulante ul{
+  display: none;
+  position: absolute;
+  left:15px;
+  top: 40px;
+}
+/*
+*/
+.navbar-nav a{
+   font-size: 14px !important; 
+}
+@media (min-width: 767px){
+	.navbar-inverse{
+		max-height: 80px !important;
+	}
+}
+@media (max-width: 767px){
+	
+}
+@media (max-width: 891px){
+
+	.heads{
+		height: 15.5%;
+	}
+}
+@media (max-width: 930px) and(min-width: 768px){
+	.heads{
+		height: 14%;
+	}
+}
+@media (max-width: 991px){
+	.min {
+		display: none;
+	}
+}
+
+@media print{
+	body{
+
+	}
+	header{
+		display: none !important;
+		height: 0 !important;
+	}
+	.heads{
+		height: 10%;
+		position: relative;
+	}
+	.fixed{
+	position: relative;
+	width: 98%;
+	background: #fff;
+	//border: 1px solid black;
+	height: 90%;
+	}
+	.position-f{
+	display: none;
+	}
+	.position-o{
+		visibility: visible;
+	}
+	.infoetudiant{
+		width: 100% !important;
+		/*border: 3px solid red;*/
+	}
+}
