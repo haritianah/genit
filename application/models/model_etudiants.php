@@ -1,6 +1,6 @@
 <?php 
 /**
-* 
+ *
 */
 class model_etudiants extends CI_Model
 {
@@ -17,6 +17,33 @@ class model_etudiants extends CI_Model
         $this->db->where('inscrit',1);
         $query = $this->db->get('etudiant');
         return $query->result();
+    }
+
+	public function get_old_etudiant($niveau ='')
+	{
+		if (!empty($niveau)){
+			$this->db->where('niveau',$niveau);
+		}
+		$query = $this->db->get('oldetudiant');
+		return $query->result();
+    }
+
+	public function get_statut_old()
+	{
+		$this->db->where('old','t');
+		$query = $this->db->get('etudiant');
+
+		return $query->result();
+    }
+
+	public function delete_recursive_old()
+	{
+		$this->db->select('id_etudiant');
+		$this->db->from("(select etudiant.id_etudiant from etudiant join oldetudiant on etudiant.id_etudiant = oldetudiant.id_etudiant) as tetudiant");
+		$subSelect = $this->db->get_compiled_select();
+		$this->db->where_in('id_etudiant', $subSelect, false);
+		$query = $this->db->delete('oldetudiant');
+		return $query;
     }
     /**
      * @param $niv1

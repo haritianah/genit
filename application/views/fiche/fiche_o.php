@@ -1,5 +1,7 @@
 <div class="bodi">
-<?php $niveau = empty($niveau) ? $etudiant->niveau : $niveau; ?>
+<?php if (empty($niveau)): ?>
+	<?= $this->app->niveau('fiche/old',$id_etudiant,$etudiant->niveau) ?>
+<?php else: ?>
 <b><p align="center" class="line nivprint" style="font-size:40px !important"><?= $niveau ?></p></b>
 <h1>FICHE INDIVIDUELLE DE RESULTATS</h1><br>
 <!-- Inof étudiant -->
@@ -235,3 +237,4 @@ endforeach;
 <div class="doyen" align="center">
     <p>Le Doyen de la Facult&eacute des Lettres <br>et Sciences Humaines</P>
 </div>
+<?php endif; ?>

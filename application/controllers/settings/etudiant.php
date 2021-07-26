@@ -45,4 +45,29 @@ class etudiant extends CI_Controller
         echo "SUCCESS";
         redirect("settings/etudiant/update/{$_POST['id']}");
     }
+
+	public function deleteold()
+	{
+		$data['title'] = 'Supprimer les anciens étudiants';
+		$data['etudiantToDel'] = $this->model_etudiants->get_statut_old();
+		debug($this->model_etudiants->delete_recursive_old());
+		if($this->input->method() == 'post'){
+			if ($this->input->post('all')){
+				die("dd");
+			}elseif($this->input->post('select')){
+				debug($this->input->post('select'));
+			}
+		}
+
+		$this->template->view('settings/etudiant/deleteold', $data);
+    }
+
+	public function old($niveau="")
+	{
+		$data['niveau'] = $niveau;
+		$data['title'] = 'Ancien étudiants';
+		$data['oldEtudiants'] = $this->model_etudiants->get_old_etudiant($niveau);
+
+		$this->template->view('settings/etudiant/etudiant_old',$data);
+    }
 }

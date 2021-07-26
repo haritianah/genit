@@ -4,8 +4,12 @@
 */
 class app extends CI_Model
 {
-	
-	//----
+	private $niveau;
+	public function __construct()
+	{
+		$this->niveau = ['L1','L2','L3','M1','M2'];
+	}
+
 	public static function connect($redirect=false){
 			if(isset($_SESSION['auth']) && !empty($_SESSION['auth']->user)){
 				return true;
@@ -33,13 +37,13 @@ class app extends CI_Model
 				
 			}
 	}
-	public function niveau($url,$sufix=""){
+	public function niveau($url,$sufix="",$niveau =""){
 		if(!empty($sufix)){
 			$sufix="/".$sufix;
 		}
-		
 		?>
 		<b><P class="nivc">CHOISIR NIVEAU D'ETUDE</P></b>
+		<?php if(empty($niveau)) : ?>
 		<div style="margin-left:100px;">
 			<div id="niv">
 				<ul>
@@ -51,7 +55,17 @@ class app extends CI_Model
 				</ul>
 			</div>
 		</div>
-
+		<?php else: ?>
+			<div style="margin-left:100px;">
+				<div id="niv">
+					<ul>
+						<?php for ($i=0; $i<=array_search($niveau,$this->niveau); $i++): ?>
+						<li><?= anchor($url.$sufix."/".$this->niveau[$i],$this->niveau[$i]) ?></li>
+						<?php endfor; ?>
+					</ul>
+					</div>
+			</div>
+		<?php endif; ?>
 		<?php
 	}
     public function semestre($url,$semestres){

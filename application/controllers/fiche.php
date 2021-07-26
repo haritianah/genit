@@ -1,6 +1,6 @@
 <?php
 /**
-*
+ *
 */
 class fiche extends CI_Controller
 {
@@ -55,7 +55,7 @@ class fiche extends CI_Controller
 
         $this->template->view('fiche/fiche_r',$data);
 	}
-	public function old($id,$niveau="L1")
+	public function old($id,$niveau="")
 	{
         $data['id_etudiant']=$id;
         $data['niveau']=$niveau;

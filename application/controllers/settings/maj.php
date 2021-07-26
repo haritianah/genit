@@ -7,7 +7,6 @@ use Ifsnop\Mysqldump\Mysqldump;
  * User: Haritiana
  * Date: 14/07/2021
  */
-//use CodeIgniter\HTTP\Request;
 class maj extends CI_Controller
 {
     public function __construct()
