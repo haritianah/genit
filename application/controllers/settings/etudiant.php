@@ -49,14 +49,33 @@ class etudiant extends CI_Controller
 	public function deleteold()
 	{
 		$data['title'] = 'Supprimer les anciens étudiants';
-		$data['etudiantToDel'] = $this->model_etudiants->get_statut_old();
-		debug($this->model_etudiants->delete_recursive_old());
+        $aetudiantToDel = $this->model_etudiants->get_statut_old();
+		$data['etudiantToDel'] = $aetudiantToDel;
+		$this->model_etudiants->delete_recursive_old();
 		if($this->input->method() == 'post'){
-			if ($this->input->post('all')){
-				die("dd");
-			}elseif($this->input->post('select')){
-				debug($this->input->post('select'));
+			foreach($aetudiantToDel as $etudiant){
+				if ($this->input->post('all') || ($this->input->post('select') && in_array($etudiant->id_etudiant, array_keys($this->input->post('select'))))) {
+					$this->db->set('id_etudiant', $etudiant->id_etudiant);
+					$this->db->set('num_etudiant', $etudiant->num_etudiant);
+					$this->db->set('nom', $etudiant->nom);
+					$this->db->set('prenom', $etudiant->prenom);
+					$this->db->set('sexe', $etudiant->sexe);
+					$this->db->set('naissance', $etudiant->naissance);
+					$this->db->set('lieu', $etudiant->lieu);
+					$this->db->set('adresse', $etudiant->adresse);
+					$this->db->set('telephone', $etudiant->telephone);
+					$this->db->set('niveau', $etudiant->niveau);
+					$this->db->set('annee_etude', $etudiant->annee_etude);
+					$this->db->set('photo', $etudiant->photo);
+					$this->db->set('etat', $etudiant->etat);
+					$this->db->set('old', $etudiant->old);
+
+					$this->db->insert('oldetudiant');
+					$this->db->where('id_etudiant', $etudiant->id_etudiant);
+					$this->db->delete('etudiant');
+				}
 			}
+			redirect($_SERVER['REQUEST_URI'], 'refresh');
 		}
 
 		$this->template->view('settings/etudiant/deleteold', $data);

@@ -7,7 +7,7 @@
 	<table class="table table-dark">
 		<thead>
 			<tr>
-				<th><input type="checkbox" name="all"></th>
+				<th><input type="checkbox" name="all" id="checkAll"></th>
 				<th>ID</th>
 				<th>Nom</th>
 				<th>Prénoms</th>
@@ -18,7 +18,7 @@
 		<tbody>
 			<?php foreach ($etudiantToDel as $item): ?>
 			<tr>
-				<td><input type="checkbox" name="select[<?= $item->id_etudiant ?>]"></td>
+				<td><input type="checkbox" class="checkitem" name="select[<?= $item->id_etudiant ?>]"></td>
 				<td><?= $item->id_etudiant ?></td>
 				<td><?= $item->nom ?></td>
 				<td><?= $item->prenom ?></td>
@@ -32,3 +32,16 @@
 		<input type="submit" value="Supprimer">
 	</div>
 </form>
+<script>
+$("#checkAll").click(function(){
+    $('input:checkbox').not(this).prop('checked', this.checked);
+});
+$('.checkitem').change(function(){
+	if($(this).prop("checked")===false){
+		$('#checkAll').prop("checked",false)
+	}
+	if($('.checkitem:checked').length == $('input:checkbox').length -1){
+		$('#checkAll').prop("checked",true)
+	}
+})
+</script>
