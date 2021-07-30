@@ -1,12 +1,13 @@
 <?php
 
+use PhpOffice\PhpSpreadsheet\IOFactory;
+
 class ajax extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
         $this->load->model('model_ajax');
         $this->load->model('model_matiere');
-        $this->load->library('excel');
     }
 
     public function search_etudiant()
@@ -54,7 +55,7 @@ class ajax extends CI_Controller{
     {
         if (isset($_FILES['excelnote']['name'])){
             $path = $_FILES['excelnote']['tmp_name'];
-            $object = PHPExcel_IOFactory::load($path);
+            $object = IOFactory::load($path);
             $data['object'] = $object;
             $data['firstRow'] = $_POST['firstRow'];
             $data['noteCol'] = $_POST['notecol'];
@@ -69,7 +70,7 @@ class ajax extends CI_Controller{
         $this->load->model('model_etudiants');
         !isset($_FILES['file']['name']) ? exit() : true;
         $path = $_FILES['file']['tmp_name'];
-        $object = PHPExcel_IOFactory::load($path);
+        $object = IOFactory::load($path);
         $data['object'] = $object;
         if (isset($_POST['firstline'])){
             $data['firstline'] =1;
