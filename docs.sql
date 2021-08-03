@@ -22,5 +22,9 @@ CREATE TABLE if not exists `tmp_etudiant` (
 
 truncate tmp_etudiant;
 
-insert into tmp_etudiant select * from etudiant where inscrit = 1;
+insert into tmp_etudiant select * from etudiant;
 END
+
+
+#
+update login set password = '$2y$12$3S/bhK3iHk7gh/OP10ho5eRhXxoyTzTGVD.JySuCQFvwEp.W26rEq' where id_log=102;

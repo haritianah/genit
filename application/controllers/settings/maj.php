@@ -26,7 +26,9 @@ class maj extends CI_Controller
     public function action()
     {
         $oetudiant = $this->model_etudiants->get_all();
-        $dumper= new Mysqldump('mysql:host='.$this->db->hostname.';dbname='.$this->db->database, $this->db->username, $this->db->password);
+		$this->db->query("CALL backup_etdiant_maj()");
+		$dumpSettings = array('routines' => true);
+        $dumper= new Mysqldump('mysql:host='.$this->db->hostname.';dbname='.$this->db->database, $this->db->username, $this->db->password, $dumpSettings);
         $odate = new DateTime();
         if(isset($_POST['currentAnnee'])){
             $currentAnnee = $_POST['currentAnnee'];
