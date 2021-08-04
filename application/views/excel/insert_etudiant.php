@@ -11,8 +11,8 @@ foreach ($object->getWorksheetIterator() as $worksheet) {
         $sexe = $worksheet->getCell('D'.$row)->getValue();
         //Date
         $getDate = $worksheet->getCell('E'.$row)->getValue();
-        $date = date('d/M/Y',PHPExcel_Shared_Date::ExcelToPHP($getDate));
-        $dateQuery = date('y-m-d',PHPExcel_Shared_Date::ExcelToPHP($getDate));
+        $date = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($getDate)->format('d/m/Y');
+        $dateQuery = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($getDate)->format('Y-m-d');
         //
         $lieu = $worksheet->getCell('F'.$row)->getValue();
         $adresse = $worksheet->getCell('G'.$row)->getValue();
