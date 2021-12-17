@@ -11,7 +11,6 @@ class fiche extends CI_Controller
 		$this->load->model('model_fiche');
 		$this->load->model('model_etudiants');
 		$this->load->model('model_note');
-		$this->load->library('PPdf');
         app::connect(true);
 	}
 

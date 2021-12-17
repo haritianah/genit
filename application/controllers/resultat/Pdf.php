@@ -7,7 +7,6 @@ class pdf extends CI_Controller{
         parent::__construct();
         $this->load->model('model_etudiants');
         $this->load->model('model_fiche');
-        $this->load->library('PPdf');
         app::connect(true);
 
     }
