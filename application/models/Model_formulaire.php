@@ -24,7 +24,7 @@ class model_formulaire extends CI_Model
                 $limitnote= $this->model_note->get_limitNote($etudiant->id_etudiant,$idmat);
 
 
-                if ($limitnote<=4 && ($etudiant->niveau == $niveau && ($resmat == NULL || $resmat=="AJN")) || ($etudiant->niveau == $niveau2 && $resmat=="AJN") ){
+                if ($limitnote<4 && ($etudiant->niveau == $niveau && ($resmat == NULL || $resmat=="AJN")) || ($etudiant->niveau == $niveau2 && $resmat=="AJN") ){
                     if ($etudiant->annee_etude==$anne){
                         $note = $post["note$etudiant->id_etudiant"];
                         //INSERT ON DUPLICATE
@@ -54,7 +54,7 @@ class model_formulaire extends CI_Model
             //COunt note Elim Normale
             $param =array('id_etudiant'=>$etudiant->id_etudiant,'id_matiere'=>$idmat,'session'=>"normale",'annee_etude'=>$anne,'notes<='=>4,'notes>'=>0);
             $countElimNormale=$this->model_note->get_noteParam($param, false)->num_rows();
-                if ($resmat!= NULL && $resmat=='AJN' && $etudiant->annee_etude== $anne && $limitnote<=4 && $countElimNormale==0 && $obj_noteNormale->num_rows()!=0){
+                if ($resmat!= NULL && $resmat=='AJN' && $etudiant->annee_etude== $anne && $limitnote<4 && $countElimNormale==0 && $obj_noteNormale->num_rows()!=0){
                     $note = $post["note$etudiant->id_etudiant"];
                     //INSERT ON DUPLICATE
                     $paramInsert = array('id_etudiant'=>$etudiant->id_etudiant,'id_matiere'=>$idmat,'id_unite'=>$idunit,

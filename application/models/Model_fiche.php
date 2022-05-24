@@ -257,7 +257,7 @@ n1.id_matiere = n3.id_matiere and n1.annee_etude = n3.annee_etude and n1.code_no
                     $noteNO= $obj_noteNorm->notes==='0.00'? 'ABS' :$obj_noteNorm->noteO;
                     $codeN= $obj_noteNorm->code_note;
                     $colorN= $obj_noteNorm->annee_etude == $obj_etudiant->annee_etude ? 'black' : 'green';
-                    $colorN= ($obj_noteNorm->annee_etude == $obj_etudiant->annee_etude && $obj_noteNorm->notes>0 && $obj_noteNorm->notes<=4)? 'red' : $colorN;
+                    $colorN= ($obj_noteNorm->annee_etude == $obj_etudiant->annee_etude && $obj_noteNorm->notes>0 && $obj_noteNorm->notes<4)? 'red' : $colorN;
                     $anneN= $obj_noteNorm->annee_etude;
                 }
                 if (!empty($obj_noteRatr->notes)){
@@ -265,7 +265,7 @@ n1.id_matiere = n3.id_matiere and n1.annee_etude = n3.annee_etude and n1.code_no
                     $noteRO=$obj_noteRatr->noteO ==='0.00'? 'ABS' :$obj_noteRatr->noteO;
                     $codeR=$obj_noteRatr->code_note;
                     $colorR = $obj_noteRatr->annee_etude == $obj_etudiant->annee_etude ? 'blue' : 'green';
-                    $colorR= ($obj_noteRatr->annee_etude == $obj_etudiant->annee_etude && $obj_noteRatr->notes>0 && $obj_noteRatr->notes<=4)? 'red' : $colorR;
+                    $colorR= ($obj_noteRatr->annee_etude == $obj_etudiant->annee_etude && $obj_noteRatr->notes>0 && $obj_noteRatr->notes<4)? 'red' : $colorR;
                     $anneR=$obj_noteRatr->annee_etude;
                 }
                 if (!empty($obj_noteNorm->notes) && !empty($resmat->resultat) && $resmat->resultat=='AJN' && $resmat->annee_etude != $obj_etudiant->annee_etude){
