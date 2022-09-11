@@ -19,6 +19,8 @@ class maj extends CI_Controller
     public function index()
     {
        $data['title'] = "Passage A.U";
+       $oMaj = $this->db->get('maj')->row();
+       $data['currentAnnee'] = $oMaj->annee_etude;
 
        $this->template->view('settings/maj/index', $data);
     }
@@ -85,5 +87,5 @@ class maj extends CI_Controller
         redirect('home');
     }
 
-    
+
 }
