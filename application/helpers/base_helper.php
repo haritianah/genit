@@ -62,7 +62,7 @@ function affichecolor($inscrit){
     }
 }
 function nonInscrit($inscrit){
-    if($inscrit =='0'){
+    if(!$inscrit){
         die("Non inscrit");
     }
 }

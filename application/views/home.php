@@ -38,14 +38,16 @@ else:
 	}
 	if($etudiant->etat=='Rat' || $etudiant->niveau==$niveau):
         //fill idArray
+
+		$idEtudiant = urlencode($etudiant->id_etudiant);
         if ($etudiant->niveau==$niveau) {
-            $idArray[$etudiant->id_etudiant]['Id']= $etudiant->id_etudiant;
-            $idArray[$etudiant->id_etudiant]['href']=base_url("fiche/original/").$etudiant->id_etudiant ;
-            $href = base_url("fiche/original/").$etudiant->id_etudiant;
+            $idArray[$etudiant->id_etudiant]['Id']= $idEtudiant;
+            $idArray[$etudiant->id_etudiant]['href']=base_url("fiche/original/").$idEtudiant ;
+            $href = base_url("fiche/original/").$idEtudiant;
         }else{
-            $idArray[$etudiant->id_etudiant]['Id']= $etudiant->id_etudiant;
-            $idArray[$etudiant->id_etudiant]['href']=base_url("fiche/recherche/").$etudiant->id_etudiant.'/'.$niveau ;
-            $href= base_url("fiche/recherche/").$etudiant->id_etudiant.'/'.$niveau ;
+            $idArray[$etudiant->id_etudiant]['Id']= $idEtudiant;
+            $idArray[$etudiant->id_etudiant]['href']=base_url("fiche/recherche/").$idEtudiant.'/'.$niveau ;
+            $href= base_url("fiche/recherche/").$idEtudiant.'/'.$niveau ;
         }
 	 ?>
 	<tr>

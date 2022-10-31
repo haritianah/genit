@@ -16,6 +16,7 @@ class fiche extends CI_Controller
 
     public function original($id)
 	{
+		$id = urldecode($id);
         $etudiant = $this->model_etudiants->get_info_etudiant($id);
         nonInscrit($etudiant->inscrit);
         // Main variables
@@ -36,7 +37,8 @@ class fiche extends CI_Controller
 	}
 	public function recherche($id,$niveau)
 	{
-	    $data['id_etudiant']=$id;
+		$id = urldecode($id);
+		$data['id_etudiant']=$id;
 	    $data['niveau']=$niveau;
         $etudiant = $this->model_etudiants->get_info_etudiant($id);
         nonInscrit($etudiant->inscrit);
@@ -56,7 +58,8 @@ class fiche extends CI_Controller
 	}
 	public function old($id,$niveau="")
 	{
-        $data['id_etudiant']=$id;
+		$id = urldecode($id);
+		$data['id_etudiant']=$id;
         $data['niveau']=$niveau;
         $etudiant = $this->model_etudiants->get_info_etudiant($id,"oldetudiant");
         // Main variables
@@ -75,7 +78,8 @@ class fiche extends CI_Controller
 
     public function pdf($id,$niveau)
     {
-        $data['id_etudiant']=$id;
+		$id = urldecode($id);
+		$data['id_etudiant']=$id;
         $data['niveau']=$niveau;
         $etudiant = $this->model_etudiants->get_info_etudiant($id);
         // Main variables

@@ -6,7 +6,7 @@
 <div align="center" class="infoetudiant">
     <p><b><?= $sexe ?></b></p>
     <?php
-    $idArray = !isset($_SESSION['idArray']) ? array($id_etudiant=>array('id'=>$id_etudiant, 'href'=>base_url('fiche/original/').$id_etudiant)) : $_SESSION['idArray'];
+    $idArray = !isset($_SESSION['idArray']) ? array($id_etudiant=>array('id'=>$id_etudiant, 'href'=>base_url('fiche/original/').urlencode($id_etudiant))) : $_SESSION['idArray'];
     $date_n=date_create($etudiant->naissance);
     ?>
 	<p align="center" class="line">Né(e) le : <?= date_format($date_n, 'd-M-Y') ?> à <?= $etudiant->lieu ?></p><br>
@@ -23,6 +23,7 @@
 		</form>
 		<a href="delibnote.php?niv=niv" target="_blank"><button type="button" class="btn btn-primary">Corriger Notes</button></a>
 		<a href=<?= base_url("fiche/recherche/".$etudiant->id_etudiant."/".get_nivAnte($niveau)) ?> target="_blank"><button type="button" class="btn btn-primary">Fiche antérieure</button></a>
+		<?= $this->model_fiche->get_nextHref($idArray,$etudiant->id_etudiant) ?>
 		<form action="" method="get">
 			<input type="hidden" name="id_etudiant" >
 			<a href="<?= $this->model_fiche->get_nextHref($idArray,$etudiant->id_etudiant) ?>"><input type="button" name="btnSuiv" value="Suivant" class="btn btn-primary"></a>
