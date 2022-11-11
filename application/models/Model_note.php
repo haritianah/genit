@@ -191,7 +191,7 @@ class model_note extends CI_Model
               $countNoteRattr = $this->get_noteParam($param,false)->num_rows();
               //QUERY
               if ($countNoteRattr==0){
-                  $this->q_delete($code,true);
+                  $this->q_delete($code,false);
                   die('Note supprimée');
               }else{
                   die("XXXX--NOTE DE RATTRAPAGE EXISTENTE");
